@@ -1,3 +1,5 @@
+import { Genre } from './genre';
+
 export interface Movie {
     title: string;
     overview: string;
@@ -7,10 +9,7 @@ export interface Movie {
     voteAverage: number;
     id: number;
     genreIds: number[];
-    genres: {
-        id: number,
-        name: string,
-    }[];
+    genres: Genre[];
     runtime: number;
     tagline: string;
     backdropPath: string;

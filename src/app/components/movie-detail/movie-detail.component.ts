@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Movie } from '../../models/movie';
 import { MoviesService } from 'src/app/services/movies/movies.service';
+import { Genre } from 'src/app/models/genre';
 
 @Component({
     selector: 'app-movie-detail',
@@ -10,6 +11,7 @@ import { MoviesService } from 'src/app/services/movies/movies.service';
 })
 export class MovieDetailComponent implements OnInit {
 
+    genreList: Genre[] = [];
     movie: Movie = {
         title: '',
         overview: '',
@@ -24,10 +26,22 @@ export class MovieDetailComponent implements OnInit {
         tagline: '',
         backdropPath: ''
     };
+    genreString: string = '';
 
     constructor(private service: MoviesService, private route: ActivatedRoute) { }
 
     ngOnInit(): void {
+        this.getAllGenres();
+        this.getMovieInfo();
+    }
+
+    getAllGenres(): void {
+		this.service.getAllGenres().subscribe((data: any) => {
+			this.genreList = data.genres;
+		});
+	}
+
+    getMovieInfo(): void {
         this.route.params.subscribe(x => {
             const id = parseInt(x.id);
             this.service.getMovieById(id).subscribe((data: any) => {
@@ -35,16 +49,20 @@ export class MovieDetailComponent implements OnInit {
                     title: data.title,
                     overview: data.overview,
                     posterPath: data.poster_path,
-                    rating: data.rating,
+                    rating: 0,
                     releaseDate: data.release_date,
                     voteAverage: data.vote_average,
                     id: data.id,
-                    genreIds: data.genre_ids,
-                    genres: [],
+                    genreIds: [],
+                    genres: data.genres,
                     runtime: data.runtime,
                     tagline: data.tagline,
                     backdropPath: data.backdrop_path
                 };
+                for (let genre of this.movie.genres) {
+                    this.genreString += `${genre.name}, `;
+                }
+                this.genreString = this.genreString.slice(0, this.genreString.length - 2);
             });
         });
     }

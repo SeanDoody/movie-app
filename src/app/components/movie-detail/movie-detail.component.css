@@ -4,7 +4,7 @@
 	align-items: center;
 }
 
-.image {
+img {
 	border-radius: 15px;
 	height: auto;
 	width: 300px;
@@ -14,15 +14,14 @@
 li * {
 	font-size: 20px;
 	color: black;
+}
+
+li {
 	list-style: none;
 }
 
 #overview {
 	display: none;
-}
-
-span {
-	padding-left: 10px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -39,7 +38,11 @@ span {
 		color: black;
 	}
 
-	.image {
+	#overview span {
+		padding-left: 5px;
+	}
+
+	img {
 		border-radius: 15px;
 		height: auto;
 		width: 300px;

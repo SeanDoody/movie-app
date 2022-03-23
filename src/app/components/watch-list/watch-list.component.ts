@@ -15,6 +15,7 @@ export class WatchListComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.favoritesList = this.service.getFavorites();
+		console.log('favoritesList:');
 		console.log(this.favoritesList);
 	}
 
@@ -22,6 +23,10 @@ export class WatchListComponent implements OnInit {
 		let index = this.favoritesList.findIndex((fav: Movie) => fav.id === movie.id);
 		this.favoritesList.splice(index, 1);
 		this.service.setFavorites(this.favoritesList);
+		console.log('this movie removed from favoritesList:');
+		console.log(movie.title);
+		console.log('updated favoritesList:');
+		console.log(this.favoritesList);
 	}
 
 }
