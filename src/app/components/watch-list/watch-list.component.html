@@ -1,1 +1,14 @@
-<p>watch-list works!</p>
+<p *ngIf="favoritesList.length === 0">No favorites to display.</p>
+<div class="movie-container" *ngFor="let movie of favoritesList">
+    <div class="movie-text">
+        <h1 class="title" [routerLink]="['/movie-list', movie.id]">{{ movie.title }}</h1>
+        <h2 class="release-date">Release Date: {{ movie.releaseDate }}</h2>
+        <h2 class="rating">Rating: {{ movie.voteAverage }}/10</h2>
+        <mat-icon (click)="removeMovie(movie)">delete</mat-icon>
+    </div>
+    <div class="movie-poster">
+        <img *ngIf="movie.posterPath" src="https://image.tmdb.org/t/p/w500{{ movie.posterPath }}" alt="poster"
+            [routerLink]="['/movie-list', movie.id]">
+        <img *ngIf="!movie.posterPath" src="https://pbs.twimg.com/media/EiSJzUnVoAYb5WI.jpg" alt="poster" class="image">
+    </div>
+</div>

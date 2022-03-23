@@ -1,1 +1,15 @@
-<p>movie-detail works!</p>
+<div id="parent-container">
+	<img *ngIf="movie.posterPath" src="https://image.tmdb.org/t/p/w500/{{ movie.posterPath }}" alt="poster" class="image" />
+	<img *ngIf="!movie.posterPath" src="https://pbs.twimg.com/media/EiSJzUnVoAYb5WI.jpg" alt="poster" class="image">
+	<ul>
+		<li><b>Title:</b><span>{{movie.title}}</span></li>
+		<li><b>Tagline:</b><span><i>{{movie.tagline}}</i></span></li>
+		<li><b>Release Date:</b><span>{{movie.releaseDate}}</span></li>
+		<li><b>Length:</b><span>{{movie.runtime}}</span>min</li>
+		<li><b>Genres:</b>
+			<span id="genre" *ngFor="let genre of movie.genres; index as i">{{ i + 1 }}.{{ genre.name }}</span>
+		</li>
+		<li><b>Rating:</b><span>{{movie.voteAverage}}/10</span></li>
+		<li id="overview"><b>Overview:</b><span>{{movie.overview}}</span></li>
+	</ul>
+</div>

@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+body, html {
+	margin: 0;
+	padding: 10px;
+	background-color: rgb(243, 165, 243);
+	background-image: linear-gradient(
+		to right,
+		rgb(255, 0, 191),
+		rgb(0, 225, 255)
+	);
+}
+
+* {
+	box-sizing: border-box;
+	font-family: 'Kanit', sans-serif;
+}

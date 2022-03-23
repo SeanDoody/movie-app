@@ -1,1 +1,25 @@
-<p>search works!</p>
+<div id="parent-container">
+    <p>Search by...</p>
+    <div class="container">
+        <input type="text" id="search" name="search" placeholder="Title" required [(ngModel)]="searchQuery" />
+        <button (click)="searchByQuery()"><mat-icon>search</mat-icon></button>
+    </div>
+    <div class="container">
+        <input type="number" id="year" name="year" placeholder="Release Year" required [(ngModel)]="year">
+        <button (click)="searchByYear()"><mat-icon>search</mat-icon></button>
+    </div>
+    <div class="container">
+        <input type="number" id="rating" name="rating" placeholder="Lowest Rating (0-9)" required [(ngModel)]="rating">
+        <button (click)="searchByRating()"><mat-icon>search</mat-icon></button>
+    </div>
+    <div class="container">
+        <select id="genre" name="genre" [(ngModel)]="filterGenre">
+            <option value="" disabled selected>Select Genre</option>
+            <option *ngFor="let genre of genreList; let i = index" [ngValue]="genre.id">
+                {{ genre.name }}
+            </option>
+        </select>
+        <button (click)="searchByGenre()"><mat-icon>search</mat-icon></button>
+    </div>
+</div>
+<app-movie-list [movieList]="movieList"></app-movie-list>
