@@ -5,14 +5,14 @@ import { SearchComponent } from 'src/app/components/search/search.component';
 import { WatchListComponent } from 'src/app/components/watch-list/watch-list.component';
 
 const routes: Routes = [
-  { path: 'search', component: SearchComponent },
-  { path: 'watch-list', component: WatchListComponent },
-  { path: 'search/:id', component: MovieDetailComponent },
-  { path: '', redirectTo: '/search', pathMatch: 'full' }
+    { path: 'search', component: SearchComponent },
+    { path: 'watch-list', component: WatchListComponent },
+    { path: 'search/:id', component: MovieDetailComponent },
+    { path: '', redirectTo: '/search', pathMatch: 'full' }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
 })
 export class AppRoutingModule { }

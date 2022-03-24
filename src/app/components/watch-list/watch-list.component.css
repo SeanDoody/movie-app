@@ -25,7 +25,9 @@ mat-icon {
 	color: red;
 }
 
-.title, .release-date, .rating {
+.title,
+.release-date,
+.rating {
 	display: none;
 }
 
@@ -39,7 +41,7 @@ mat-icon {
 		font-size: 24px;
 		margin-left: 20px;
 	}
-	
+
 	.movie-container {
 		flex-direction: row;
 		background-color: rgb(243, 165, 243);

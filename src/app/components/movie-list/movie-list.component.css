@@ -33,7 +33,9 @@ mat-icon {
 	transform: scale(2);
 }
 
-.title, .release-date, .rating {
+.title,
+.release-date,
+.rating {
 	display: none;
 }
 

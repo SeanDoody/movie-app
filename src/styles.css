@@ -1,6 +1,7 @@
 @import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
 
-body, html {
+body,
+html {
 	margin: 0;
 	padding: 10px;
 	background-color: rgb(243, 165, 243);
@@ -13,5 +14,5 @@ body, html {
 
 * {
 	box-sizing: border-box;
-	font-family: 'Kanit', sans-serif;
+	font-family: "Kanit", sans-serif;
 }

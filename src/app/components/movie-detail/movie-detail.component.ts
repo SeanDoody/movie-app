@@ -36,10 +36,10 @@ export class MovieDetailComponent implements OnInit {
     }
 
     getAllGenres(): void {
-		this.service.getAllGenres().subscribe((data: any) => {
-			this.genreList = data.genres;
-		});
-	}
+        this.service.getAllGenres().subscribe((data: any) => {
+            this.genreList = data.genres;
+        });
+    }
 
     getMovieInfo(): void {
         this.route.params.subscribe(x => {
@@ -66,5 +66,5 @@ export class MovieDetailComponent implements OnInit {
             });
         });
     }
-    
+
 }

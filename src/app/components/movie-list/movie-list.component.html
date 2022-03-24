@@ -1,17 +1,29 @@
 <div class="movie-container" *ngFor="let movie of movieList">
 	<div class="movie-text">
-		<h1 class="title" [routerLink]="['/search', movie.id]">{{ movie.title }}</h1>
+		<h1 class="title" [routerLink]="['/search', movie.id]">
+			{{ movie.title }}
+		</h1>
 		<h2 class="release-date">Release Date: {{ movie.releaseDate }}</h2>
 		<h2 class="rating">Rating: {{ movie.voteAverage }}/10</h2>
-		<mat-icon *ngIf="!isFavorite(movie)" (click)="addFavorite(movie)">favorite_border</mat-icon>
-		<mat-icon *ngIf="isFavorite(movie)" (click)="removeFavorite(movie)">favorite</mat-icon>
+		<mat-icon *ngIf="!isFavorite(movie)" (click)="addFavorite(movie)"
+			>favorite_border</mat-icon
+		>
+		<mat-icon *ngIf="isFavorite(movie)" (click)="removeFavorite(movie)"
+			>favorite</mat-icon
+		>
 	</div>
 	<div class="movie-poster" *ngIf="movie.posterPath">
-		<img src="https://image.tmdb.org/t/p/w500{{ movie.posterPath }}" alt="poster"
-			[routerLink]="['/search', movie.id]">
+		<img
+			src="https://image.tmdb.org/t/p/w500{{ movie.posterPath }}"
+			alt="poster"
+			[routerLink]="['/search', movie.id]"
+		/>
 	</div>
 	<div class="movie-poster" *ngIf="!movie.posterPath">
-		<img src="https://pbs.twimg.com/media/EiSJzUnVoAYb5WI.jpg" alt="poster"
-			[routerLink]="['/search', movie.id]">
+		<img
+			src="https://pbs.twimg.com/media/EiSJzUnVoAYb5WI.jpg"
+			alt="poster"
+			[routerLink]="['/search', movie.id]"
+		/>
 	</div>
 </div>

@@ -15,7 +15,8 @@ p {
 	margin-top: 10px;
 }
 
-input, select {
+input,
+select {
 	border-right: none;
 	border-radius: 5px;
 	height: 30px;
@@ -29,7 +30,6 @@ button {
 }
 
 @media only screen and (min-width: 768px) {
-	
 	#parent-container {
 		flex-direction: row;
 		justify-content: space-around;

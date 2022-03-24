@@ -3,30 +3,30 @@ import { Movie } from '../../models/movie';
 import { MoviesService } from 'src/app/services/movies/movies.service';
 
 @Component({
-	selector: 'app-watch-list',
-	templateUrl: './watch-list.component.html',
-	styleUrls: ['./watch-list.component.css']
+    selector: 'app-watch-list',
+    templateUrl: './watch-list.component.html',
+    styleUrls: ['./watch-list.component.css']
 })
 export class WatchListComponent implements OnInit {
 
-	favoritesList: Movie[] = [];
+    favoritesList: Movie[] = [];
 
-	constructor(private service: MoviesService) { }
+    constructor(private service: MoviesService) { }
 
-	ngOnInit(): void {
-		this.favoritesList = this.service.getFavorites();
-		console.log('favoritesList:');
-		console.log(this.favoritesList);
-	}
+    ngOnInit(): void {
+        this.favoritesList = this.service.getFavorites();
+        console.log('favoritesList:');
+        console.log(this.favoritesList);
+    }
 
-	removeMovie(movie: Movie) {
-		let index = this.favoritesList.findIndex((fav: Movie) => fav.id === movie.id);
-		this.favoritesList.splice(index, 1);
-		this.service.setFavorites(this.favoritesList);
-		console.log('this movie removed from favoritesList:');
-		console.log(movie.title);
-		console.log('updated favoritesList:');
-		console.log(this.favoritesList);
-	}
+    removeMovie(movie: Movie) {
+        let index = this.favoritesList.findIndex((fav: Movie) => fav.id === movie.id);
+        this.favoritesList.splice(index, 1);
+        this.service.setFavorites(this.favoritesList);
+        console.log('this movie removed from favoritesList:');
+        console.log(movie.title);
+        console.log('updated favoritesList:');
+        console.log(this.favoritesList);
+    }
 
 }

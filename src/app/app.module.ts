@@ -13,22 +13,22 @@ import { SearchComponent } from './components/search/search.component';
 import { WatchListComponent } from './components/watch-list/watch-list.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    MovieDetailComponent,
-    MovieListComponent,
-    SearchComponent,
-    WatchListComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    HttpClientModule,
-    MatIconModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        HeaderComponent,
+        MovieDetailComponent,
+        MovieListComponent,
+        SearchComponent,
+        WatchListComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        HttpClientModule,
+        MatIconModule
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
